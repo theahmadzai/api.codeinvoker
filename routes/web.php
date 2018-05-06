@@ -12,10 +12,7 @@
  */
 
 $router->get('/', function () use ($router) {
-    $images = DB::table('images')->get();
+    $images = App\Article::with('image')->get();
 
-    foreach ($images as $image) {
-        // echo "<img src=\"{$image->url}\">";
-    }
-    return 3;
+    return $images;
 });
