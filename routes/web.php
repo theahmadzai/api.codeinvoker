@@ -12,5 +12,10 @@
  */
 
 $router->get('/', function () use ($router) {
-    return 3333;
+    $images = DB::table('images')->get();
+
+    foreach ($images as $image) {
+        // echo "<img src=\"{$image->url}\">";
+    }
+    return 3;
 });
