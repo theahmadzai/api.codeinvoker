@@ -19,7 +19,8 @@ class CreateImagesTable extends Migration
             $table->string('url');
             $table->string('format');
             $table->integer('size');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
